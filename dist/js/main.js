@@ -5,19 +5,14 @@ window.addEventListener('load', () => {
   */
 
   // get DOM elements short helper
-  const get_el = (selector, single = true) => {
-    if (selector) {
-      return single ? document.querySelector(selector) : document.querySelectorAll(selector);
-    }    
-  }
+  const get_el = (sel, one = true) => sel ? one ? document.querySelector(sel) : document.querySelectorAll(sel) : null;
 
+  // computed mobile screen detect
   Object.defineProperty(window, 'isMobile', {
-    get: function() { 
-      return window.innerWidth <= 768 ? true : false; 
-    }
+    get: () => window.innerWidth <= 768 ? true : false
   })
 
-
+  let test = window.innerWidth <= 768 ? true : false;
 
 
 
@@ -26,20 +21,20 @@ window.addEventListener('load', () => {
   */
   const getCoords = elem => elem.getBoundingClientRect().top + pageYOffset;
   const getCoordsY = elem => elem.getBoundingClientRect().bottom + pageYOffset;
-  const drop_btn = get_el('.dropdown__btn', false);
-  const drop_picker = get_el('.dropdown .picker', false);
-  const header = get_el('.header');
+  const drop_btn = get_el('.dropdown__btn', 0);
+  const drop_picker = get_el('.dropdown .picker', 0);
   const scroll_top = get_el('.scrolltop');
-  const nav_links = get_el('.menu a', false);
-  const sections = get_el('.section', false);
+  const nav_links = get_el('.menu a', 0);
+  const sections = get_el('.section', 0);
   const calculator = get_el('.calculator');
-  const calc_anchor = get_el('.to_calc', false);
-  const modals = get_el('.modal', false);
-  const open_order = get_el('.open_order', false);
-  const close_modal = get_el('.close_modal', false);
+  const calc_anchor = get_el('.to_calc', 0);
+  const modals = get_el('.modal', 0);
+  const open_order = get_el('.open_order', 0);
+  const close_modal = get_el('.close_modal', 0);
   const burger_btn = get_el('.burger');
   const mobile_menu = get_el('.mobileMenu');
   const accept_order = get_el('#accept_order');
+  const brands_list = get_el('.brand', 0);
   
   const brands_hover_status = true;
   const throttle_delay = 50;
@@ -49,12 +44,9 @@ window.addEventListener('load', () => {
   let slider_params = {
     observer: true,
     observeParents: true,
-    slidesPerView: 3,
-    speed: 200,
-    effect: 'slide',
     spaceBetween: 48,
     autoplay: {
-      delay: 300011111,
+      delay: 3000,
       disableOnInteraction: false
     },
     pagination: {
@@ -85,8 +77,6 @@ window.addEventListener('load', () => {
   }
 
 
-
-
   /* dropdowns */
   drop_btn.forEach(el => {
     el.addEventListener('click', e => el.closest('.dropdown').classList.toggle('dropdown--opened'));
@@ -99,9 +89,7 @@ window.addEventListener('load', () => {
       let opener = root.querySelector('.dropdown__btn');
       let input = root.querySelector('input[type=hidden]');
 
-      if (input) {
-        input.value = this.innerText;
-      }
+      input ? input.value = this.innerText : null;
       
       pickers.forEach(el => el.classList.remove('active'));
       root.classList.remove('dropdown--opened');
@@ -112,21 +100,21 @@ window.addEventListener('load', () => {
 
 
   /* range slider */
-  const ranges = get_el('.custom_range', false);
+  const ranges = get_el('.custom_range', 0);
 
-  ranges.forEach((el, i) => {
+  ranges.forEach(el => {
     let root = el.closest('.range_field');
-    let {max: ui_max,min: ui_min,step: ui_step, start: ui_start} = el.dataset;
+    let {max, min, step, start} = el.dataset;
 
     noUiSlider.create(el, {
-      start: +ui_start,
+      start: +start,
       behaviour: 'tap',
       connect: [false, true],
       range: {
-          'min': +ui_min,
-          'max': +ui_max
+          'min': +min,
+          'max': +max
       },
-      step: +ui_step,
+      step: +step,
       format: {
         to: function (value) {
           return parseInt(value)
@@ -140,9 +128,7 @@ window.addEventListener('load', () => {
     if (root) {
       let target = root.querySelector('.input');
 
-      el.noUiSlider.on('update', function (values, handle) {    
-        target.value = values;
-      });
+      el.noUiSlider.on('update', values => target.value = values);
 
       target.addEventListener('change', function () {
         el.noUiSlider.setHandle(0, this.value);
@@ -155,7 +141,7 @@ window.addEventListener('load', () => {
 
   /* accept calculate */
   const accept_calc = get_el('#lightbox_accept');
-  const calc_fields = get_el('#calc .calc_field', false);
+  const calc_fields = get_el('#calc .calc_field', 0);
 
   accept_calc.addEventListener('click', e => {
     let data = {};
@@ -166,12 +152,9 @@ window.addEventListener('load', () => {
       if (!isNaN(val)) {
         val = +val;
       }
-      
-      if (field.name) {
-        data[field.name] = val;
-      } else {
-        data[`unnamed_field${i}`] = val;
-      }
+
+      field.name ? data[field.name] = val : data[`unnamed_field${i}`] = val;
+
     });
 
     // data is result
@@ -240,16 +223,17 @@ window.addEventListener('load', () => {
         slidesPerColumn: 2
       }
     }
-  };  
+  };    
 
   const s_views_slider = new Swiper(s_views.elem, s_views_params);
   const s_portfolio_slider = new Swiper(s_portfolio.elem, s_portfolio_params);
   const s_reviews_slider = new Swiper(s_reviews.elem, s_reviews_params);
 
 
-  /* randow hover for brands */
-  const brands_list = get_el('.brand', false);
-
+  /* 
+    randow hover for brands
+    - brands_hover_status -- is a bool config constant, it was init from top area
+  */
   if (brands_hover_status) {
     setInterval(() => {
       let r = Math.round(0 - 0.5 + Math.random() * ((brands_list.length - 1) - 0 + 1));
@@ -292,36 +276,28 @@ window.addEventListener('load', () => {
       /* update throttle */
       throttle_call = throtte_current;
     }
-
   });
 
   
   /* scroll top button */
-  scroll_top.addEventListener('click', e => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  scroll_top.addEventListener('click', e => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
 
   /* navigation */
   nav_links.forEach(link => {
-
     link.addEventListener('click', e => {
       e.preventDefault();
 
-      let menu = link.closest('.mobileMenu');
-
-      if (menu) {
-        menu.classList.add('loading');
+      if (link.closest(`.${mobile_menu.classList[0]}`)) {
+        mobile_menu.classList.add('loading');
         setTimeout(() => {
           burger_btn.classList.remove('active');
-          mobile_menu.classList.remove('active');
+          mobile_menu.classList.remove('active', 'loading');
           document.documentElement.classList.remove('blocked');
-          menu.classList.remove('loading');
         }, 600);
       }
 
       if (!link.classList.contains('active')) {
-
         sections.forEach(section => {
           if (section.dataset.section == link.dataset.target) {
 
@@ -329,27 +305,22 @@ window.addEventListener('load', () => {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
               window.scrollTo({ top: (getCoords(section) - 100), behavior: 'smooth' });
-            }
-
-            
+            }            
 
             disableLinks();
             link.classList.add('active');
           }
-        });
-        
+        });        
       }      
     });
-
   });
 
 
   /* calc anchor */
   calc_anchor.forEach(btn => {
-    btn.addEventListener('click', e => {
-      window.scrollTo({ top: getCoords(calculator), behavior: 'smooth' });
-    });
+    btn.addEventListener('click', e => window.scrollTo({ top: getCoords(calculator), behavior: 'smooth' }));
   });
+
 
   /* open order modal */
   open_order.forEach(btn => {
@@ -358,10 +329,10 @@ window.addEventListener('load', () => {
     });
   });
 
+
   /* close modal */
-  close_modal.forEach(btn => {
-    btn.addEventListener('click', closeModals);
-  });
+  close_modal.forEach(btn => btn.addEventListener('click', closeModals));
+
 
   /* burger menu */
   burger_btn.addEventListener('click', function() {
@@ -376,6 +347,7 @@ window.addEventListener('load', () => {
     }
   });
 
+
   /* validate order form */
   accept_order.addEventListener('click', function(e) {
     e.preventDefault();
@@ -386,8 +358,7 @@ window.addEventListener('load', () => {
 
     fields.forEach(field => {
       if (field.value == '') {
-        field.classList.remove('input--ok');
-        field.classList.remove('input--err');
+        field.classList.remove('input--ok', 'input--err');
         setTimeout(() => {
           field.classList.add('input--err');
         }, 0);
@@ -405,59 +376,42 @@ window.addEventListener('load', () => {
       root.querySelector('.subtitle').innerText = 'Спасибо за заявку!';
       setTimeout(closeModals, 2000);
     }
-
   });
 
 
   try {
-    (() => {
-      get_el('input[name=phone]', false).forEach(el => {
-        let mask = IMask(el, {
-          mask: '+{38}(000)000-00-00'
-        });
-      });
-    })();
+    (() => get_el('input[name=phone]', 0).forEach(el => IMask(el, {mask: '+{38}(000)000-00-00'})))();
   }
   catch(e){};
 
   
-
-
   /* *** AOS - animation on scroll *** */ 
-    /*
-      * enabled on a desktop only
-      * if mobile - don't init
-      * if error script - remove style from DOM & throw error to try_fn wrapper
-      * styles don't working in screens less than 768px    
-    */
+  /*
+    * enabled on a desktop only
+    * if mobile - don't init
+    * if error script - remove style from DOM & throw error to try_fn wrapper
+    * styles don't working in screens less than 768px    
+  */
+  try {
+    // throw ('111');
+    !window.isMobile ? AOS.init() : null;
+  }
+  catch(e) {
+    get_el('link', 0).forEach(link => {
+      if (link.dataset.style == 'aos') {
+        link.remove();
+        console.log('aos style link has been removed');
+      }
+    });
+    throw new Error('aos is not defined...');
+  }
 
-    try {
-      // throw ('111');
-      !isMobile ? AOS.init() : null;
-    }
-    catch(e) {
-      get_el('link', false).forEach(link => {
-        if (link.dataset.style == 'aos') {
-          link.remove();
-          console.log('aos style link has been removed');
-        }
-      });
-      throw new Error('aos is not defined...');
-    }
-
-    /* *** end *** */
-
-
-
-
-
+  /* *** end *** */
 
 
   /* functions */
   function disableLinks() {
-    nav_links.forEach(link => {
-      link.classList.remove('active');
-    });
+    nav_links.forEach(link => link.classList.remove('active'));
   } 
 
   function updateNav() {
@@ -482,28 +436,17 @@ window.addEventListener('load', () => {
   function openModal(modal) {
     if (modal) {
       let target = get_el(modal);
-      let modals = get_el('.modal', false);
+      let modals = get_el('.modal', 0);
 
-      modals.forEach(modal => {
-        modal.classList.remove('active');
-      });
+      modals.forEach(modal => modal.classList.remove('active'));
       target.classList.add('active');
       document.documentElement.classList.add('blocked');
     }    
   }
 
   function closeModals() {
-    modals.forEach(modal => {
-      modal.classList.remove('active');
-    });
+    modals.forEach(modal => modal.classList.remove('active'));
     setTimeout(() => document.documentElement.classList.remove('blocked'), 400);
-  }
-
+  }  
   
-
-  
-  
-
-
-
 });

@@ -787,6 +787,11 @@ div.swiper-pagination .bullet.swiper-pagination-bullet-active:hover {
   transform: rotate(180deg);
 }
 
+.swiper-button-disabled {
+  pointer-events: none;
+  opacity: .5;
+}
+
 .calc {
   padding: 48px 56px;
   background: #fff;

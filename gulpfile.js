@@ -153,7 +153,13 @@ gulp.task('buildLibs', function() {
 	.pipe(gulp.dest('dist/libs'))
 });
 
-gulp.task('b', gulp.parallel('img', 'buildHtml', 'buildCss', 'buildCssCritical', 'buildCssLibs', 'buildJs', 'buildFonts', 'buildLibs'));
+gulp.task('buildFav', function() {
+	return gulp.src('app/*.ico')
+	.pipe(gulp.dest('dist'))
+});
+
+
+gulp.task('b', gulp.parallel('img', 'buildHtml', 'buildCss', 'buildCssCritical', 'buildCssLibs', 'buildJs', 'buildFonts', 'buildLibs', 'buildFav'));
 
 
 gulp.task('watch', function() {
