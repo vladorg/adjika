@@ -7,13 +7,11 @@ window.addEventListener('load', () => {
   // get DOM elements short helper
   const get_el = (sel, one = true) => sel ? one ? document.querySelector(sel) : document.querySelectorAll(sel) : null;
 
+
   // computed mobile screen detect
   Object.defineProperty(window, 'isMobile', {
     get: () => window.innerWidth <= 768 ? true : false
   })
-
-  let test = window.innerWidth <= 768 ? true : false;
-
 
 
   /*
@@ -34,13 +32,11 @@ window.addEventListener('load', () => {
   const burger_btn = get_el('.burger');
   const mobile_menu = get_el('.mobileMenu');
   const accept_order = get_el('#accept_order');
-  const brands_list = get_el('.brand', 0);
-  
+  const brands_list = get_el('.brand', 0);  
   const brands_hover_status = true;
   const throttle_delay = 50;
 
   let throttle_call = 1; 
-
   let slider_params = {
     observer: true,
     observeParents: true,
@@ -70,7 +66,6 @@ window.addEventListener('load', () => {
       }
     }
   }
-
   let slider_params_column = {
     slidesPerColumn: 2,
     slidesPerColumnFill: 'row'
