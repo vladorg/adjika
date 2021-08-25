@@ -1,0 +1,32 @@
+-
+  const features_list = [
+    {
+      title: 'Создает яркое лицо торговому знаку',
+      icon: 'feature1.svg'
+    },
+    {
+      title: 'Рекламирует торговый знак независимо от времени суток, сезона',
+      icon: 'feature2.svg'
+    },
+    {
+      title: 'Посезонная замена рекламной продукции без смены каркаса',
+      icon: 'feature3.svg'
+    },
+    {
+      title: 'Расположение в любом географическом месте — на улице или в помещении',
+      icon: 'feature4.svg'
+    }
+  ]
+
+
+section.section.features(data-section="features") 
+  .container 
+    .heading(data-aos="fade-right") Преймущества наших 
+      span лайтбоксов
+
+    .features__list 
+      each feature_item in features_list
+        .feature(data-aos="flip-right" data-aos-duration="750" data-aos-delay="500") 
+          p= feature_item.title
+          .feature__icon
+            img(src=`./img/icons/${feature_item.icon}` alt="")

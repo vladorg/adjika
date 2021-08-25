@@ -1,0 +1,57 @@
+-
+ let footer_menu = [
+   {
+     name: 'Главная',
+     target: 'intro'
+   },
+   {
+     name: 'Виды лайтбоксов',
+     target: 'views'
+   },
+   {
+     name: 'О нас',
+     target: 'about'
+   },
+   {
+     name: 'Преимущества',
+     target: 'features'
+   },
+   {
+     name: 'Портфолио',
+     target: 'portfolio'
+   },
+   {
+     name: 'Отзывы',
+     target: 'reviews'
+   }
+ ]
+
+footer.footer 
+  .container    
+    nav.menu
+      ul 
+        each link in header_menu
+          li
+            a(href="#" data-target=link.target class=link.active ? 'active' : null)=link.name
+    .footer__wrap 
+      a(href="./").logo 
+        img(src="./img/logo_white.svg" alt="" width="114" height="47")
+      .footer__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cum molestie duis vulputate id feugiat enim aenean. Nisl lorem elementum bibendum pellentesque purus.
+      ul.footer__links 
+        li 
+          a(href="#") Privacy Policy
+      .socials
+        a(href="#" target="_blank").socials__link
+          img(src="./img/icons/twitter.svg" alt="")
+        a(href="#" target="_blank").socials__link
+          img(src="./img/icons/facebook.svg" alt="")
+        a(href="#" target="_blank").socials__link
+          img(src="./img/icons/google.svg" alt="")
+
+//- button.btn.scrolltop.ic-arrow_black
+
+include ./mobile_menu.pug
+include ../modals/order.pug
+
+include ./../inc/scripts.pug
+include ./../inc/styles.pug

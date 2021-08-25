@@ -1,0 +1,74 @@
+-
+  const lightboxes = [
+    {
+      name: 'Стандарт',
+      active: true
+    },
+    {
+      name: 'Односторонний'
+    },
+    {
+      name: 'Двухсторонний'
+    },
+    {
+      name: 'Наружный'
+    },
+    {
+      name: 'Интерьерный'
+    },
+    {
+      name: 'Подвесной'
+    },
+    {
+      name: 'Напольный'
+    }
+  ]
+
+
+
+section.section.calculator(data-section="calculator")  
+  .container
+    .calculator__wrap 
+
+      .calc#calc(data-aos="zoom-in" data-aos-anchor-placement="top-center")
+
+        .calc__drops 
+          .drop 
+            .label Выберите вид лайтбокса
+            .dropdown
+              input(type="hidden" name="lightbox_type" value="Стандарт").calc_field
+              button.btn.dropdown__btn.ic-arrow_drop Стандарт
+              .dropdown__inner
+                each lightbox in lightboxes
+                  button(class=lightbox.active ? 'active' : null).btn.picker= lightbox.name
+          .drop 
+            .label Выберите тип лайтбокса
+            .dropdown
+              input(type="hidden" name="lightbox_type2" value="Стандарт").calc_field
+              button.btn.dropdown__btn.ic-arrow_drop Стандарт
+              .dropdown__inner
+                each lightbox in lightboxes
+                  button(class=lightbox.active ? 'active' : null).btn.picker= lightbox.name
+                  
+        .calc__row.range_field 
+          .field 
+            .label Задайте ширину в см
+            .custom_range(data-min="1" data-max="100" data-step="1" data-start="34")
+          input(type="text" name="lightbox_width").input.calc_field
+        .calc__row.range_field  
+          .field 
+            .label Задайте высоту в см
+            .custom_range(data-min="1" data-max="100" data-step="1" data-start="76")
+          input(type="text" name="lightbox_height").input.calc_field
+        .calc__row.range_field  
+          .field 
+            .label Количество
+            .custom_range(data-min="1" data-max="100" data-step="1" data-start="12")
+          input(type="text" name="lightbox_count").input.calc_field
+
+        
+      .calculator__content(data-aos="fade-left") 
+        .heading Калькулятор 
+          span лайтбокса
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id ornare aliquet mus adipiscing ut diam adipiscing cursus. Dolor sed mi fames orci.
+        button.btn.btn--primary#lightbox_accept(data-aos="zoom-in" data-aos-delay="300") расчитать стоимость

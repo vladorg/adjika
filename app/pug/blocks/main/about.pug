@@ -1,0 +1,37 @@
+-
+  const features = [
+    {
+      title: '12 лет опыта на рынке',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus eu, ac in euismod mauris integer.',
+      icon: 'about1.svg'
+    },
+    {
+      title: '300 счастливых клиентов',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus eu, ac in euismod mauris integer.',
+      icon: 'about2.svg'
+    },
+    {
+      title: '1520 завершенных проектов',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus eu, ac in euismod mauris integer.',
+      icon: 'about3.svg'
+    }
+  ]
+
+
+section.section.about(data-section="about")
+  .container.bg.bg--left-bottom
+
+    .heading(data-aos="fade-right") Лайтбоксы - это 
+      span Adgika
+
+    .about__content 
+      img(src="./img/banners/about.jpg" alt="" width="345" height="300" data-aos="fade-right" data-aos-anchor-placement="top-center").about__img
+      .about__info
+        .about__features 
+          each feature in features
+            .item(data-aos="fade-left" data-aos-duration="700" data-aos-delay="300") 
+              img(src=`./img/icons/${feature.icon}` alt="")
+              .about__feature
+                .subtitle= feature.title 
+                p= feature.content
+        button.btn.btn--primary.open_order(data-aos="zoom-in" data-aos-delay="300") Заказать просчет

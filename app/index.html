@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title><!-- build:css_critical -->
+    <link rel="stylesheet" href="./css/critical.css"><!-- endbuild -->
+  </head>
+  <body class="root">
+    <header class="header"> 
+      <div class="container">
+        <div class="header__wrap"> <a class="logo" href="./"> <img src="./img/logo_black.svg" alt="" width="114" height="47"></a>
+          <nav class="menu"> 
+            <ul> 
+              <li><a class="active" href="#" data-target="intro">Главная</a></li>
+              <li><a href="#" data-target="views">Виды лайтбоксов</a></li>
+              <li><a href="#" data-target="about">О нас</a></li>
+              <li><a href="#" data-target="calculator">Калькулятор</a></li>
+              <li><a href="#" data-target="features">Преимущества</a></li>
+              <li><a href="#" data-target="portfolio">Портфолио</a></li>
+              <li><a href="#" data-target="reviews">Отзывы</a></li>
+            </ul>
+          </nav>
+          <div class="phones"> <a href="tel:380976542331">097 654 23 31</a><a href="tel:380636542331">063 654 23 31</a></div>
+          <button class="btn burger ic-burger"></button>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <button class="btn scrolltop ic-arrow_black"></button>
+      <section class="section intro" data-section="intro">
+        <div class="container bg">
+          <div class="title">Лайтбоксы на заказ в <br><span>Харькове </span>и <span>Украине</span></div>
+          <div class="intro__content"> 
+            <div class="intro__text"> 
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices aliquet dignissim sed porta leo amet sed. Nulla sapien ipsum semper quis suspendisse nunc. </p>
+              <button class="btn btn--primary open_order">Заказать просчет</button>
+            </div><img class="intro__banner" src="./img/banners/main.jpg" alt="" width="784" height="446">
+          </div>
+        </div>
+      </section>
+      <section class="section views" data-section="views"> 
+        <div class="container"> 
+          <div class="section__title"> 
+            <div class="heading" data-aos="fade-right">Виды <span>лайтбоксов</span></div>
+            <div class="controls" data-aos="fade-left">
+              <button class="btn swiper-prev"></button>
+              <button class="btn swiper-next"></button>
+            </div>
+          </div>
+          <div class="swiper-container" data-aos="fade-up" data-aos-anchor-placement="top-center">
+            <div class="swiper-wrapper"><a class="swiper-slide" href="./img/banners/view1.jpg" data-fancybox="gallery"><img src="./img/banners/view1.jpg" width="368" height="432" alt=""></a><a class="swiper-slide" href="./img/banners/view2.jpg" data-fancybox="gallery"><img src="./img/banners/view2.jpg" width="368" height="432" alt=""></a><a class="swiper-slide" href="./img/banners/view3.jpg" data-fancybox="gallery"><img src="./img/banners/view3.jpg" width="368" height="432" alt=""></a><a class="swiper-slide" href="./img/banners/view1.jpg" data-fancybox="gallery"><img src="./img/banners/view1.jpg" width="368" height="432" alt=""></a><a class="swiper-slide" href="./img/banners/view2.jpg" data-fancybox="gallery"><img src="./img/banners/view2.jpg" width="368" height="432" alt=""></a><a class="swiper-slide" href="./img/banners/view3.jpg" data-fancybox="gallery"><img src="./img/banners/view3.jpg" width="368" height="432" alt=""></a></div>
+            <div class="swiper-pagination swiper-pagination--static"></div>
+          </div>
+        </div>
+      </section>
+      <section class="section about" data-section="about">
+        <div class="container bg bg--left-bottom">
+          <div class="heading" data-aos="fade-right">Лайтбоксы - это <span>Adgika</span></div>
+          <div class="about__content"> <img class="about__img" src="./img/banners/about.jpg" alt="" width="345" height="300" data-aos="fade-right" data-aos-anchor-placement="top-center">
+            <div class="about__info">
+              <div class="about__features"> 
+                <div class="item" data-aos="fade-left" data-aos-duration="700" data-aos-delay="300"> <img src="./img/icons/about1.svg" alt="">
+                  <div class="about__feature">
+                    <div class="subtitle">12 лет опыта на рынке</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus eu, ac in euismod mauris integer.</p>
+                  </div>
+                </div>
+                <div class="item" data-aos="fade-left" data-aos-duration="700" data-aos-delay="300"> <img src="./img/icons/about2.svg" alt="">
+                  <div class="about__feature">
+                    <div class="subtitle">300 счастливых клиентов</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus eu, ac in euismod mauris integer.</p>
+                  </div>
+                </div>
+                <div class="item" data-aos="fade-left" data-aos-duration="700" data-aos-delay="300"> <img src="./img/icons/about3.svg" alt="">
+                  <div class="about__feature">
+                    <div class="subtitle">1520 завершенных проектов</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus eu, ac in euismod mauris integer.</p>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn--primary open_order" data-aos="zoom-in" data-aos-delay="300">Заказать просчет</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="layer">
+        <section class="section calculator" data-section="calculator"> 
+          <div class="container">
+            <div class="calculator__wrap"> 
+              <div class="calc" id="calc" data-aos="zoom-in" data-aos-anchor-placement="top-center">
+                <div class="calc__drops"> 
+                  <div class="drop"> 
+                    <div class="label">Выберите вид лайтбокса</div>
+                    <div class="dropdown">
+                      <input class="calc_field" type="hidden" name="lightbox_type" value="Стандарт">
+                      <button class="btn dropdown__btn ic-arrow_drop">Стандарт</button>
+                      <div class="dropdown__inner">
+                        <button class="active btn picker">Стандарт</button>
+                        <button class="btn picker">Односторонний</button>
+                        <button class="btn picker">Двухсторонний</button>
+                        <button class="btn picker">Наружный</button>
+                        <button class="btn picker">Интерьерный</button>
+                        <button class="btn picker">Подвесной</button>
+                        <button class="btn picker">Напольный</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="drop"> 
+                    <div class="label">Выберите тип лайтбокса</div>
+                    <div class="dropdown">
+                      <input class="calc_field" type="hidden" name="lightbox_type2" value="Стандарт">
+                      <button class="btn dropdown__btn ic-arrow_drop">Стандарт</button>
+                      <div class="dropdown__inner">
+                        <button class="active btn picker">Стандарт</button>
+                        <button class="btn picker">Односторонний</button>
+                        <button class="btn picker">Двухсторонний</button>
+                        <button class="btn picker">Наружный</button>
+                        <button class="btn picker">Интерьерный</button>
+                        <button class="btn picker">Подвесной</button>
+                        <button class="btn picker">Напольный</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="calc__row range_field"> 
+                  <div class="field"> 
+                    <div class="label">Задайте ширину в см</div>
+                    <div class="custom_range" data-min="1" data-max="100" data-step="1" data-start="34"></div>
+                  </div>
+                  <input class="input calc_field" type="text" name="lightbox_width">
+                </div>
+                <div class="calc__row range_field"> 
+                  <div class="field"> 
+                    <div class="label">Задайте высоту в см</div>
+                    <div class="custom_range" data-min="1" data-max="100" data-step="1" data-start="76"></div>
+                  </div>
+                  <input class="input calc_field" type="text" name="lightbox_height">
+                </div>
+                <div class="calc__row range_field"> 
+                  <div class="field"> 
+                    <div class="label">Количество</div>
+                    <div class="custom_range" data-min="1" data-max="100" data-step="1" data-start="12"></div>
+                  </div>
+                  <input class="input calc_field" type="text" name="lightbox_count">
+                </div>
+              </div>
+              <div class="calculator__content" data-aos="fade-left"> 
+                <div class="heading">Калькулятор <span>лайтбокса</span></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id ornare aliquet mus adipiscing ut diam adipiscing cursus. Dolor sed mi fames orci.</p>
+                <button class="btn btn--primary" id="lightbox_accept" data-aos="zoom-in" data-aos-delay="300">расчитать стоимость</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section features" data-section="features"> 
+          <div class="container"> 
+            <div class="heading" data-aos="fade-right">Преймущества наших <span>лайтбоксов</span></div>
+            <div class="features__list"> 
+              <div class="feature" data-aos="flip-right" data-aos-duration="750" data-aos-delay="500"> 
+                <p>Создает яркое лицо торговому знаку</p>
+                <div class="feature__icon"><img src="./img/icons/feature1.svg" alt=""></div>
+              </div>
+              <div class="feature" data-aos="flip-right" data-aos-duration="750" data-aos-delay="500"> 
+                <p>Рекламирует торговый знак независимо от времени суток, сезона</p>
+                <div class="feature__icon"><img src="./img/icons/feature2.svg" alt=""></div>
+              </div>
+              <div class="feature" data-aos="flip-right" data-aos-duration="750" data-aos-delay="500"> 
+                <p>Посезонная замена рекламной продукции без смены каркаса</p>
+                <div class="feature__icon"><img src="./img/icons/feature3.svg" alt=""></div>
+              </div>
+              <div class="feature" data-aos="flip-right" data-aos-duration="750" data-aos-delay="500"> 
+                <p>Расположение в любом географическом месте — на улице или в помещении</p>
+                <div class="feature__icon"><img src="./img/icons/feature4.svg" alt=""></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="section portfolio" data-section="portfolio"> 
+        <div class="container"> 
+          <div class="section__title"> 
+            <div class="heading" data-aos="fade-right">Наше  <span>портфолио</span></div>
+            <div class="controls" data-aos="fade-left"> 
+              <button class="btn swiper-prev"></button>
+              <button class="btn swiper-next"></button>
+            </div>
+          </div>
+          <div class="swiper-container"> 
+            <div class="swiper-wrapper"><a class="swiper-slide portfolio__item" href="./img/portfolio/1.jpg" data-fancybox="gallery" data-aos="zoom-in" data-aos-delay="500"><img src="./img/portfolio/1.jpg" width="368" height="450" alt="">
+                <div class="subtitle">Lorem ipsum dolor</div></a><a class="swiper-slide portfolio__item" href="./img/portfolio/2.jpg" data-fancybox="gallery" data-aos="zoom-in" data-aos-delay="500"><img src="./img/portfolio/2.jpg" width="368" height="450" alt="">
+                <div class="subtitle">Lorem ipsum dolor</div></a><a class="swiper-slide portfolio__item" href="./img/portfolio/3.jpg" data-fancybox="gallery" data-aos="zoom-in" data-aos-delay="500"><img src="./img/portfolio/3.jpg" width="368" height="450" alt="">
+                <div class="subtitle">Lorem ipsum dolor</div></a><a class="swiper-slide portfolio__item" href="./img/portfolio/4.jpg" data-fancybox="gallery" data-aos="zoom-in" data-aos-delay="500"><img src="./img/portfolio/4.jpg" width="368" height="450" alt="">
+                <div class="subtitle">Lorem ipsum dolor</div></a><a class="swiper-slide portfolio__item" href="./img/portfolio/5.jpg" data-fancybox="gallery" data-aos="zoom-in" data-aos-delay="500"><img src="./img/portfolio/5.jpg" width="368" height="450" alt="">
+                <div class="subtitle">Lorem ipsum dolor</div></a><a class="swiper-slide portfolio__item" href="./img/portfolio/6.jpg" data-fancybox="gallery" data-aos="zoom-in" data-aos-delay="500"><img src="./img/portfolio/6.jpg" width="368" height="450" alt="">
+                <div class="subtitle">Lorem ipsum dolor</div></a><a class="swiper-slide portfolio__item" href="./img/portfolio/1.jpg" data-fancybox="gallery" data-aos="zoom-in" data-aos-delay="500"><img src="./img/portfolio/1.jpg" width="368" height="450" alt="">
+                <div class="subtitle">Lorem ipsum dolor</div></a><a class="swiper-slide portfolio__item" href="./img/portfolio/2.jpg" data-fancybox="gallery" data-aos="zoom-in" data-aos-delay="500"><img src="./img/portfolio/2.jpg" width="368" height="450" alt="">
+                <div class="subtitle">Lorem ipsum dolor</div></a><a class="swiper-slide portfolio__item" href="./img/portfolio/3.jpg" data-fancybox="gallery" data-aos="zoom-in" data-aos-delay="500"><img src="./img/portfolio/3.jpg" width="368" height="450" alt="">
+                <div class="subtitle">Lorem ipsum dolor</div></a><a class="swiper-slide portfolio__item" href="./img/portfolio/4.jpg" data-fancybox="gallery" data-aos="zoom-in" data-aos-delay="500"><img src="./img/portfolio/4.jpg" width="368" height="450" alt="">
+                <div class="subtitle">Lorem ipsum dolor</div></a><a class="swiper-slide portfolio__item" href="./img/portfolio/5.jpg" data-fancybox="gallery" data-aos="zoom-in" data-aos-delay="500"><img src="./img/portfolio/5.jpg" width="368" height="450" alt="">
+                <div class="subtitle">Lorem ipsum dolor</div></a><a class="swiper-slide portfolio__item" href="./img/portfolio/6.jpg" data-fancybox="gallery" data-aos="zoom-in" data-aos-delay="500"><img src="./img/portfolio/6.jpg" width="368" height="450" alt="">
+                <div class="subtitle">Lorem ipsum dolor</div></a>
+            </div>
+            <div class="swiper-pagination swiper-pagination--static"></div>
+          </div>
+        </div>
+      </section>
+      <section class="section reviews" data-section="reviews"> 
+        <div class="container bg"> 
+          <div class="heading" data-aos="fade-right">Что говорят о нас наши <span>клиенты</span></div>
+          <div class="controls"> 
+            <button class="btn swiper-prev"></button>
+            <button class="btn swiper-next"></button>
+          </div>
+          <div class="swiper-container"> 
+            <div class="swiper-wrapper"> 
+              <div class="swiper-slide review" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500">
+                <div class="review__wrap"><img class="review__photo" src="./img/clients/1.png" alt="">
+                  <div class="review__name">Иван Иванов</div>
+                  <div class="review__rate ic-star">4.5</div>
+                </div>
+                <div class="review__review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempor lorem mattis leo ultrices neque aliquet semper. Aliquam vel imperdiet amet est nec nullam</div>
+              </div>
+              <div class="swiper-slide review" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500">
+                <div class="review__wrap"><img class="review__photo" src="./img/clients/2.png" alt="">
+                  <div class="review__name">Светлана Шевченко</div>
+                  <div class="review__rate ic-star">5.0</div>
+                </div>
+                <div class="review__review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempor lorem mattis leo ultrices neque aliquet semper. Aliquam vel imperdiet amet est nec nullam</div>
+              </div>
+              <div class="swiper-slide review" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500">
+                <div class="review__wrap"><img class="review__photo" src="./img/clients/1.png" alt="">
+                  <div class="review__name">Иван Иванов</div>
+                  <div class="review__rate ic-star">4.5</div>
+                </div>
+                <div class="review__review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempor lorem mattis leo ultrices neque aliquet semper. Aliquam vel imperdiet amet est nec nullam</div>
+              </div>
+              <div class="swiper-slide review" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500">
+                <div class="review__wrap"><img class="review__photo" src="./img/clients/2.png" alt="">
+                  <div class="review__name">Светлана Шевченко</div>
+                  <div class="review__rate ic-star">5.0</div>
+                </div>
+                <div class="review__review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempor lorem mattis leo ultrices neque aliquet semper. Aliquam vel imperdiet amet est nec nullam</div>
+              </div>
+            </div>
+            <div class="swiper-pagination swiper-pagination--static"></div>
+          </div>
+        </div>
+      </section>
+      <section class="section brands">
+        <div class="container"> 
+          <div class="heading" data-aos="fade-right">С нами <span>сотрудничают</span></div>
+          <div class="brands__list"> 
+            <div class="brand" data-aos="zoom-in" data-aos-delay="500"><img src="./img/brands/1.png" alt=""></div>
+            <div class="brand" data-aos="zoom-in" data-aos-delay="500"><img src="./img/brands/2.png" alt=""></div>
+            <div class="brand" data-aos="zoom-in" data-aos-delay="500"><img src="./img/brands/3.png" alt=""></div>
+            <div class="brand" data-aos="zoom-in" data-aos-delay="500"><img src="./img/brands/4.png" alt=""></div>
+            <div class="brand" data-aos="zoom-in" data-aos-delay="500"><img src="./img/brands/5.png" alt=""></div>
+            <div class="brand" data-aos="zoom-in" data-aos-delay="500"><img src="./img/brands/6.png" alt=""></div>
+            <div class="brand" data-aos="zoom-in" data-aos-delay="500"><img src="./img/brands/7.png" alt=""></div>
+            <div class="brand" data-aos="zoom-in" data-aos-delay="500"><img src="./img/brands/8.png" alt=""></div>
+          </div>
+        </div>
+      </section>
+      <section class="section capture" data-aos="zoom-out" data-aos-delay="300"> 
+        <div class="container"> 
+          <div class="capture__wrap">
+            <div class="capture__content">
+              <div class="heading">Lorem ipsum dolor sit amet, consectetur <span>adipiscing elit. </span></div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <button class="btn btn--primary to_calc" data-aos="zoom-in" data-aos-delay="700">расчитать стоимость</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"> 
+      <div class="container">   
+        <nav class="menu">
+          <ul> 
+            <li><a class="active" href="#" data-target="intro">Главная</a></li>
+            <li><a href="#" data-target="views">Виды лайтбоксов</a></li>
+            <li><a href="#" data-target="about">О нас</a></li>
+            <li><a href="#" data-target="calculator">Калькулятор</a></li>
+            <li><a href="#" data-target="features">Преимущества</a></li>
+            <li><a href="#" data-target="portfolio">Портфолио</a></li>
+            <li><a href="#" data-target="reviews">Отзывы</a></li>
+          </ul>
+        </nav>
+        <div class="footer__wrap"> <a class="logo" href="./"> <img src="./img/logo_white.svg" alt="" width="114" height="47"></a>
+          <div class="footer__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cum molestie duis vulputate id feugiat enim aenean. Nisl lorem elementum bibendum pellentesque purus.</div>
+          <ul class="footer__links"> 
+            <li> <a href="#">Privacy Policy</a></li>
+          </ul>
+          <div class="socials"><a class="socials__link" href="#" target="_blank"><img src="./img/icons/twitter.svg" alt=""></a><a class="socials__link" href="#" target="_blank"><img src="./img/icons/facebook.svg" alt=""></a><a class="socials__link" href="#" target="_blank"><img src="./img/icons/google.svg" alt=""></a></div>
+        </div>
+      </div>
+    </footer>
+    <div class="mobileMenu">
+      <div class="menu">
+        <ul>
+          <li><a class="active" href="#" data-target="intro">Главная</a></li>
+          <li><a href="#" data-target="views">Виды лайтбоксов</a></li>
+          <li><a href="#" data-target="about">О нас</a></li>
+          <li><a href="#" data-target="calculator">Калькулятор</a></li>
+          <li><a href="#" data-target="features">Преимущества</a></li>
+          <li><a href="#" data-target="portfolio">Портфолио</a></li>
+          <li><a href="#" data-target="reviews">Отзывы</a></li>
+        </ul>
+      </div>
+      <div class="phones"><a href="tel:380976542331">097 654 23 31</a><a href="tel:380636542331">063 654 23 31</a></div>
+      <div class="socials"><a class="socials__link" href="#" target="_blank"><img src="./img/icons/twitter_black.svg" alt=""></a><a class="socials__link" href="#" target="_blank"><img src="./img/icons/facebook_black.svg" alt=""></a><a class="socials__link" href="#" target="_blank"><img src="./img/icons/google_black.svg" alt=""></a></div>
+    </div>
+    <div class="modal" id="modalOrder">
+      <div class="modal__win"> 
+        <button class="btn ic-close modal__close close_modal"></button>
+        <div class="modal__wrap">
+          <div class="subtitle">Заказать просчет</div>
+          <div class="modal__sub">Оставьте Ваш номер телефона и мы с Вами свяжемся!</div>
+          <form class="form">
+            <div class="field"> 
+              <input class="input required" type="text" name="name" placeholder="Имя" autocomplete="off">
+            </div>
+            <div class="field"> 
+              <input class="input required" type="text" name="phone" placeholder="Номер телефона" autocomplete="off">
+            </div>
+            <button class="btn btn--primary" id="accept_order">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="./libs/swiper/swiper-bundle.min.js"></script>
+    <script src="./libs/aos/aos.js"></script>
+    <script src="./libs/nouislider/nouislider.min.js"></script>
+    <script src="./libs/jquery/jquery.min.js"></script>
+    <script src="./libs/lightbox/jquery.fancybox.min.js"></script>
+    <script src="./libs/mask/imask.min.js"></script><!-- build:js -->
+    <script src="./js/main.js"></script><!-- endbuild -->
+    <link rel="stylesheet" data-style="swiper" href="./css/libs/swiper-bundle.min.css">
+    <link rel="stylesheet" data-style="aos" href="./css/libs/aos.css">
+    <link rel="stylesheet" data-style="nouislider" href="./css/libs/nouislider.css">
+    <link rel="stylesheet" data-style="fancybox" href="./css/libs/jquery.fancybox.min.css"><!-- build:css_main -->
+    <link rel="stylesheet" href="./css/main.css"><!-- endbuild -->
+  </body>
+</html>

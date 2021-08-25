@@ -1,0 +1,47 @@
+.calc
+  padding: 48px 56px
+  background: #fff
+  border: 2px solid $c_primary
+  border-radius: 4px
+  width: 48%
+  +md
+    padding: 32px 16px
+  +sm
+    order: 10
+    width: 100%
+    padding: 16px
+
+  .label
+    margin-bottom: 16px
+
+  &__drops
+    margin-bottom: 32px
+    +f(0,0,space-between,flex-start)
+    +xxs
+      flex-wrap: wrap
+    .drop 
+      width: 45%
+      +xxs
+        width: 100%
+      +not_last
+        +xxs
+          margin-bottom: 16px
+    .label
+      font-size: 15px
+    
+
+  &__row 
+    +f(0,0,space-between,center)
+    +xxs
+      flex-wrap: wrap
+    +not_last
+      margin-bottom: 32px
+    .field
+      width: 100%
+    .input
+      width: 104px
+      margin-left: 24px
+      margin-top: 24px
+      +xxs
+        width: 100%
+        margin: 8px 0 0 0

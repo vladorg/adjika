@@ -1,0 +1,12 @@
+.modal#modalOrder
+  .modal__win 
+    button.btn.ic-close.modal__close.close_modal
+    .modal__wrap
+      .subtitle Заказать просчет
+      .modal__sub Оставьте Ваш номер телефона и мы с Вами свяжемся!
+      form.form
+        .field 
+          input(type="text" name="name" placeholder="Имя" autocomplete="off").input.required
+        .field 
+          input(type="text" name="phone" placeholder="Номер телефона" autocomplete="off").input.required
+        button.btn.btn--primary#accept_order Отправить

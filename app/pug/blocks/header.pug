@@ -1,0 +1,47 @@
+-
+ let header_menu = [
+   {
+     name: 'Главная',
+     target: 'intro',
+     active: true
+   },
+   {
+     name: 'Виды лайтбоксов',
+     target: 'views'
+   },
+   {
+     name: 'О нас',
+     target: 'about'
+   },
+   {
+     name: 'Калькулятор',
+     target: 'calculator'
+   },
+   {
+     name: 'Преимущества',
+     target: 'features'
+   },
+   {
+     name: 'Портфолио',
+     target: 'portfolio'
+   },
+   {
+     name: 'Отзывы',
+     target: 'reviews'
+   }
+ ]
+
+header.header 
+  .container
+    .header__wrap 
+      a(href="./").logo 
+        img(src="./img/logo_black.svg" alt="" width="114" height="47")
+      nav.menu 
+        ul 
+          each link in header_menu
+            li
+              a(href="#" data-target=link.target class=link.active ? 'active' : null)=link.name
+      .phones 
+        a(href="tel:380976542331") 097 654 23 31
+        a(href="tel:380636542331") 063 654 23 31
+      button.btn.burger.ic-burger

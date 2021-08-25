@@ -1,0 +1,45 @@
+-
+  let reviews = [
+    {
+      name: 'Иван Иванов',
+      rate: '4.5',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempor lorem mattis leo ultrices neque aliquet semper. Aliquam vel imperdiet amet est nec nullam',
+      photo: './img/clients/1.png'
+    },
+    {
+      name: 'Светлана Шевченко',
+      rate: '5.0',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempor lorem mattis leo ultrices neque aliquet semper. Aliquam vel imperdiet amet est nec nullam',
+      photo: './img/clients/2.png'
+    },
+    {
+      name: 'Иван Иванов',
+      rate: '4.5',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempor lorem mattis leo ultrices neque aliquet semper. Aliquam vel imperdiet amet est nec nullam',
+      photo: './img/clients/1.png'
+    },
+    {
+      name: 'Светлана Шевченко',
+      rate: '5.0',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempor lorem mattis leo ultrices neque aliquet semper. Aliquam vel imperdiet amet est nec nullam',
+      photo: './img/clients/2.png'
+    }
+  ]
+
+section.section.reviews(data-section="reviews") 
+  .container.bg 
+    .heading(data-aos="fade-right") Что говорят о нас наши 
+      span клиенты
+    .controls 
+      button.btn.swiper-prev
+      button.btn.swiper-next
+    .swiper-container 
+      .swiper-wrapper 
+        each review in reviews
+          .swiper-slide.review(data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500")
+            .review__wrap
+              img(src=review.photo alt="").review__photo 
+              .review__name=review.name
+              .review__rate.ic-star=review.rate
+            .review__review=review.text 
+      .swiper-pagination.swiper-pagination--static

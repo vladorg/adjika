@@ -1,0 +1,64 @@
+.footer
+  background: $c_primary
+  margin-top: auto
+  padding: 100px 0 48px 0
+  +t(16,0,26,#fff)
+  +md
+    padding: 24px 0 48px 0
+  +xxs
+    padding: 24px 0
+
+  &__wrap
+    padding-top: 48px
+    +f(0,0,0,flex-start)
+    +md
+      padding-top: 24px
+    +xxs
+      flex-direction: column
+      padding-top: 12px
+
+  .logo
+    +xs
+      display: none
+
+  &__text
+    max-width: 39%
+    margin: 0 auto
+    +sm
+      font-size: 12px
+    +xs
+      margin: 0
+    +xxs
+      max-width: 100%
+      text-align: center
+
+  &__links
+    margin: 0 auto
+    +xxs
+      margin: 12px auto
+    li
+      a
+        color: #fff
+        +sm
+          font-size: 12px
+
+  .menu
+    padding-bottom: 48px
+    border-bottom: 2px solid #f18989
+    +md
+      padding-bottom: 24px
+    +xxs
+      padding-bottom: 12px
+    ul
+      flex-wrap: wrap
+      +xxs
+        justify-content: center
+      a
+        color: #fff
+        &.active
+          color: #dadada
+
+  .socials
+    margin-left: auto
+    +xxs
+      margin: 0 auto

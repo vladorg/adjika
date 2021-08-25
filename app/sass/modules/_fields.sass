@@ -1,0 +1,45 @@
+.input
+  padding: 9px 9px 9px 16px
+  border: 1px solid #E0E0E0
+  resize: none
+  width: 100%
+  border-radius: 4px
+  +t(14,400,22,#000)
+  +tr(all,.2s)
+  &::-webkit-input-placeholder
+    color: #aeafb3
+    font-family: $ff
+  &::-moz-placeholder
+    color: #aeafb3
+    font-family: $ff
+  &:-moz-placeholder
+    color: #aeafb3
+    font-family: $ff
+  &:-ms-input-placeholder
+    color: #aeafb3
+    font-family: $ff
+
+  &--err
+    border-color: $c_primary!important
+    animation: input_error .6s linear 0s 1
+  
+  &--ok
+    border-color: #35c735!important
+
+
+
+
+
+
+
+.field
+  +not_last
+    margin-bottom: 16px
+
+@keyframes input_error
+  0%
+    box-shadow: none
+  50%
+    box-shadow: 0 0 6px 1px #ffa9a9 
+  100%
+    box-shadow: none

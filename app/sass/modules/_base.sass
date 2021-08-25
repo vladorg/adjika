@@ -1,0 +1,318 @@
+html
+  overflow-x: hidden
+  &.blocked
+    overflow-y: hidden
+    body
+      padding-right: 16px
+      +xs
+        padding-right: 0
+      &.scrolled
+        .header
+          padding-right: 16px
+          +sm
+            padding-right: 0
+  
+body
+  // font-size: $fz
+  // font-weight: $fw
+  // font-family: $ff
+  // line-height: $lh
+  // overflow-x: hidden
+  overflow-x: clip
+  background: $c_body
+  color: $c_text
+  -webkit-tap-highlight-color: $transparent
+  +xxs
+    font-size: $fz_xxs
+  &.root
+    min-height: 100vh
+    +f(column,0,0,0)
+  &.compensate-for-scrollbar
+    margin-right: 0
+
+
+// button,
+// input,
+// textarea
+//   font-family: $ff
+
+// img
+//   display: block
+//   max-width: 100%
+//   height: auto
+
+a
+  color: $c_text
+  // text-decoration: none
+  +hover
+    text-decoration: underline      
+
+
+div, img, section, span, p
+  &:active,
+  &:target,
+  &:focus
+    outline: none
+
+
+
+
+
+// .menu
+//   ul
+//     +f()
+//     li
+//       +not_last
+//         margin-right: 32px
+//         +md
+//           margin-right: 12px
+//       a
+//         text-transform: uppercase
+//         white-space: nowrap
+//         +t(14,500,18,0)
+//         +tr(all,.2s)
+//         +md
+//           +t(12,0,16,0)
+//         +hover
+//           text-shadow: 0 0 3px #d6d6d6
+//           text-decoration: none
+//         &.active
+//           color: $c_primary
+
+
+// .phones
+//   a
+//     display: block
+//     +t(16,600,20,$c_text)
+//     +md
+//       +t(14,0,18,0)
+//     +not_last
+//       margin-bottom: 8px
+
+
+.socials
+  +f(0,0,0,center)
+  &__link
+    +tr(all,.2s)
+    +not_last
+      margin-right: 29px
+    +hover
+      transform: scale(1.3)
+
+
+.logo
+  +tr(all,.4s)
+  +hover
+    transform: scale(1.1)
+  // img
+  //   width: 114px
+  //   +md
+  //     width: 100px
+
+button.burger
+  // display: none
+  &.active
+    +before(false)
+      width: 16px
+      height: 16px
+      background: url('../img/sprite.svg') -44px -22px
+
+
+.mobileMenu
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 100
+  background: #fff
+  padding: 106px 4% 32px 4%
+  text-align: center
+  overflow: auto
+  opacity: 0
+  pointer-events: none
+  transform: translateY(-30px)
+  +tr(all,.4s)
+  +before
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 10
+    background: #fff
+    opacity: 0 
+    pointer-events: none
+    +tr(all,.2s)
+  +after
+    width: 200px
+    height: 200px
+    position: absolute
+    z-index: 20
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background: url('../img/loading.gif') no-repeat
+    background-size: contain
+    background-position: center
+    opacity: 0
+    pointer-events: none
+    +tr(all,.2s)
+
+  &.active
+    opacity: 1
+    pointer-events: auto
+    transform: none
+  &.loading
+    +before
+      opacity: 1
+    +after
+      opacity: 1
+
+  .menu
+    ul
+      display: block
+      li
+        margin-right: 0
+        +not_last
+          margin-bottom: 8px
+        a
+          +t(14,0,16,0)
+
+  .phones
+    margin-top: 32px
+    a
+      font-size: 16px
+      +not_last
+        margin-bottom: 16px
+
+  .socials
+    margin-top: 32px
+    justify-content: center
+    &__link
+      transform: scale(1.4)
+      +not_last
+        margin-right: 40px
+
+
+button.scrolltop
+  width: 50px
+  height: 50px
+  background: #e0e0e0
+  border-radius: 50%
+  position: fixed
+  bottom: 40px
+  right: -60px
+  opacity: 0
+  z-index: 5
+  +f()
+  +tr(all,.4s)
+  +xs
+    bottom: 16px
+  +hover
+    background: $c_primary
+    +xs
+      background: #e0e0e0
+    +before(false)
+      background: url('../img/sprite.svg') -121px -22px
+      +xs
+        background: url('../img/sprite.svg') -95px -5px
+  +before(false)
+    margin: auto
+    transform: rotate(90deg)
+
+  &.active
+    right: 30px
+    opacity: 1
+    +xs
+      right: 16px
+
+
+
+.modal
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  background: $c_overlay
+  z-index: 200
+  opacity: 0
+  pointer-events: none
+  +f()
+  +tr(all,.4s)
+  button.modal__close
+    position: absolute
+    top: 0
+    right: 0
+    padding: 12px
+    +tr(all,.2s)
+    +hover
+      background: #e0e0e0
+  &__win
+    width: 100%
+    max-width: 500px
+    padding: 32px
+    margin: auto
+    background: #fff
+    border: 2px solid $c_primary
+    border-radius: 4px
+    position: relative
+    transform: scale(.95)
+    opacity: 0
+    overflow: auto
+    +tr(all,.4s)
+    transition-delay: .3s
+    +xs
+      max-width: 100%
+      height: 100%
+      border-radius: 0
+      padding: 16px
+      +f()
+    .subtitle
+      text-align: center
+      margin-bottom: 8px
+  &__wrap
+    +xs
+      margin: auto
+  &__sub
+    text-align: center
+    +t(16,0,20,0)    
+  .form
+    margin-top: 24px
+    .btn
+      display: block
+      margin: 32px auto 0 auto
+  &.active
+    opacity: 1
+    pointer-events: auto
+    .modal__win
+      transform: scale(1)
+      opacity: 1
+      transition-delay: .3s
+
+
+@keyframes header_move
+  from
+    transform: translateY(-100%)
+  to
+    transform: translateY(0)
+
+
+// ***  For IE10-11  ***
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+  body
+    overflow: hidden
+    &::before
+      content: 'К сожалению сайт не может открыться в вашем браузере, так как он устарел. Пожалуйста обновите ваш браузер и попробуйте еще раз.'
+      position: fixed
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      background: #fff
+      z-index: 1000
+      text-align: center
+      padding-top: 50px
+

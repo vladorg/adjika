@@ -1,0 +1,210 @@
+@import "./inc/_mixins.sass"
+@import "./inc/_var.sass"
+@import "./inc/_fonts.sass"
+// @import "./inc/_icons.sass"
+    
+// @import "./modules/_reset.sass"
+// @import "./modules/_base.sass"
+@import "./modules/_buttons.sass"
+// @import "./modules/_fields.sass"
+// @import "./modules/_layout.sass"
+// @import "./modules/_sliders.sass"
+@import "./modules/_text.sass"
+// @import "./modules/_calc.sass"
+// @import "./modules/_dropdown.sass"
+
+    
+@import "./parts/_header.sass"
+// @import "./parts/_footer.sass"
+
+// @import "./pages/_index.sass"
+
+
+html, body, ul, p
+  margin: 0
+  padding: 0
+ol, ul
+  list-style: none
+
+a
+  text-decoration: none
+
+body
+  font-size: $fz
+  font-weight: $fw
+  font-family: $ff
+  line-height: $lh
+
+img
+  display: block
+  max-width: 100%
+  height: auto
+
+button,
+input,
+textarea
+  font-family: $ff
+
+.menu
+  ul
+    +f()
+    li
+      +not_last
+        margin-right: 32px
+        +md
+          margin-right: 12px
+      a
+        text-transform: uppercase
+        white-space: nowrap
+        +t(14,500,18,0)
+        +tr(all,.2s)
+        +md
+          +t(12,0,16,0)
+        +hover
+          text-shadow: 0 0 3px #d6d6d6
+          text-decoration: none
+        &.active
+          color: $c_primary
+
+.phones
+  a
+    display: block
+    +t(16,600,20,$c_text)
+    +md
+      +t(14,0,18,0)
+    +not_last
+      margin-bottom: 8px
+
+button.burger
+  display: none
+
+
+.mobileMenu
+  position: fixed
+  opacity: 0
+
+button.scrolltop
+  opacity: 0
+
+.modal
+  position: fixed
+  opacity: 0
+
+.logo
+  img
+    width: 114px
+    +md
+      width: 100px
+
+.container
+  width: $container
+  margin: 0 auto
+  position: relative
+  +md
+    width: 92%
+
+.intro
+  padding: 50px 0 148px 0
+  opacity: 1
+  +sm
+    padding: 24px 0 48px 0
+  +xxs
+    padding: 0 0 48px 0
+  .title
+    padding-right: 120px
+    +xs
+      padding-right: 0
+  &__content
+    +f(0,0,0,flex-start)
+    +xs
+      flex-wrap: wrap
+  &__text
+    padding-right: 48px
+    +sm
+      font-size: 14px
+    +xs
+      padding-right: 0
+    .btn
+      margin-top: 56px
+      +xs
+        margin-top: 24px
+  &__banner
+    margin-left: auto
+    max-width: 67%
+    +md
+      max-width: 55%
+    +xs
+      max-width: 100%
+      display: none
+
+.views
+  padding-bottom: 150px
+  max-height: 678px
+  overflow: hidden
+  +sm
+    padding-bottom: 48px
+  +xxs
+    max-height: 600px
+  a.swiper-slide
+    +hover
+      cursor: zoom-in
+    img
+      width: 100%
+
+  .swiper-container
+    cursor: move
+  .swiper-pagination
+    display: none
+    +xs
+      display: block
+
+.about
+  padding-bottom: 106px
+  +sm
+    padding-bottom: 48px
+  &__img
+    margin-right: 152px
+    width: 100%
+    max-width: 48%
+    +md
+      max-width: 44%
+      margin-right: 56px
+    +xs
+      max-width: 100%
+      margin-right: 0
+      max-height: 300px
+      object-fit: cover
+      order: 10
+  &__content
+    +f(0,0,0,center)
+    +md
+      align-items: flex-start
+    +xs
+      flex-wrap: wrap
+  &__info 
+    margin-left: auto
+    +xs
+      margin-left: 0
+      order: 1
+      margin-bottom: 32px
+
+    .btn
+      display: block
+      margin: 56px 0 0 calc(56px + 48px)
+      +sm
+        margin: 24px 0 0 calc(56px + 24px)
+      +xs
+        margin: 24px 0 0 0
+
+
+div.swiper-pagination
+  &--static
+    position: static
+    margin-top: 16px
+
+.section
+  &__title
+    .controls
+      position: absolute
+      +xs
+        display: none

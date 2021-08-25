@@ -1,0 +1,353 @@
+.main
+  +xs
+    padding-bottom: 30px
+  
+// .intro
+//   padding: 50px 0 148px 0
+//   opacity: 1
+//   +sm
+//     padding: 24px 0 48px 0
+//   .title
+//     padding-right: 120px
+//     +xs
+//       padding-right: 0
+//   &__content
+//     +f(0,0,0,flex-start)
+//     +xs
+//       flex-wrap: wrap
+//   &__text
+//     padding-right: 48px
+//     +sm
+//       font-size: 14px
+//     +xs
+//       padding-right: 0
+//     .btn
+//       margin-top: 56px
+//       +xs
+//         margin-top: 24px
+//   &__banner
+//     margin-left: auto
+//     max-width: 67%
+//     +md
+//       max-width: 55%
+//     +xs
+//       max-width: 100%
+//       display: none
+
+
+
+// .views
+//   padding-bottom: 150px
+//   +sm
+//     padding-bottom: 48px
+//   a.swiper-slide
+//     +hover
+//       cursor: zoom-in
+//     img
+//       width: 100%
+
+//   .swiper-container
+//     cursor: move
+//   .swiper-pagination
+//     display: none
+//     +xs
+//       display: block
+
+
+// .about
+//   padding-bottom: 106px
+//   +sm
+//     padding-bottom: 48px
+//   &__img
+//     margin-right: 152px
+//     width: 100%
+//     max-width: 48%
+//     +md
+//       max-width: 44%
+//       margin-right: 56px
+//     +xs
+//       max-width: 100%
+//       margin-right: 0
+//       max-height: 300px
+//       object-fit: cover
+//       order: 10
+//   &__content
+//     +f(0,0,0,center)
+//     +md
+//       align-items: flex-start
+//     +xs
+//       flex-wrap: wrap
+//   &__info 
+//     margin-left: auto
+//     +xs
+//       margin-left: 0
+//       order: 1
+//       margin-bottom: 32px
+
+//     .btn
+//       display: block
+//       margin: 56px 0 0 calc(56px + 48px)
+//       +sm
+//         margin: 24px 0 0 calc(56px + 24px)
+//       +xs
+//         margin: 24px 0 0 0
+
+
+.item
+  +f(0,0,0,flex-start)
+  img
+    width: 56px
+    margin-right: 48px
+    +sm
+      margin-right: 24px
+    +xxs
+      width: 32px
+      margin-right: 16px
+  p 
+    +t(16,0,24,$c_grey)
+    +sm
+      +t(12,0,20,0)
+  
+  +not_last
+    margin-bottom: 48px
+    +sm
+      margin-bottom: 24px
+
+
+.calculator
+  padding: 100px 0 150px 0
+  +sm
+    padding: 0 0 48px 0
+  &__wrap 
+    +f(0,0,space-between,center)
+    +sm
+      flex-wrap: wrap
+      position: relative
+      padding-bottom: 80px
+  &__content 
+    width: 42%
+    +sm
+      width: 100%
+      order: 1
+      margin-bottom: 24px
+    .heading
+      font-size: 37px
+      margin-bottom: 24px
+    .btn
+      margin-top: 56px
+      +sm
+        margin-top: 0
+        position: absolute
+        bottom: 0
+        left: 0
+
+
+
+.features
+  padding-bottom: 150px
+  +sm
+    padding-bottom: 48px
+  &__list
+    display: grid
+    grid-template-columns: repeat(4,22%)
+    grid-gap: 48px
+    +md
+      grid-gap: 24px
+    +sm
+      grid-template-columns: repeat(2,48%)
+      justify-content: space-between
+    +xxs
+      display: block
+
+
+.feature
+  height: 196px
+  background: #fff
+  box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.04), 0px 0px 46.8519px rgba(0, 0, 0, 0.02), 0px 0px 25.4815px rgba(0, 0, 0, 0.0121481), 0px 0px 13px rgba(0, 0, 0, 0.01), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.00785185), 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.00481481)
+  border-radius: 4px
+  padding: 24px
+  +f(column,0,0,0)
+  +not_last
+    +xxs
+      margin-bottom: 24px
+  p
+    +t(14,600,20,#4f4f4f)
+    +el(60px,3,true)
+  &__icon
+    margin-top: auto
+    width: 60px
+    height: 60px
+    background: #FFECEC
+    border-radius: 4px
+    +f()
+    img
+      margin: auto
+
+
+
+.portfolio
+  padding-bottom: 150px
+  +sm
+    padding-bottom: 48px
+
+  .swiper-container
+    cursor: move
+  .swiper-pagination
+    display: none
+    +xs
+      display: block
+
+  a.swiper-slide
+    +hover
+      cursor: zoom-in
+    img
+      width: 100%
+
+  &__item
+    +before
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      background: rgba(61, 61, 61, .7)
+      +tr(all,.4s)
+    .subtitle
+      position: absolute
+      bottom: 40px
+      left: 40px
+      right: 40px
+      margin-bottom: 0
+      +t(0,0,29,#fff)
+      +el(145px,5,true)
+      +sm
+        bottom: 20px
+      +xs
+        text-align: center
+    +hover
+      +before(false)
+        opacity: 0
+
+
+
+
+.reviews
+  padding-bottom: 150px
+  +sm
+    padding-bottom: 48px
+
+  .controls
+    position: absolute
+    bottom: 0
+    right: 0
+    +xxs
+      display: none
+  .swiper-container
+    margin-right: 200px
+    cursor: move
+    +sm
+      margin-right: 120px
+    +xxs
+      margin-right: 0
+  .swiper-pagination
+    display: none
+    +xxs
+      display: block
+  
+.review
+  padding: 32px
+  border: 2px solid $c_primary
+  border-radius: 4px 
+  +xxs
+    padding: 16px 
+  &:not(.swiper-slide)
+    max-width: 472px
+  &__wrap
+    +f(0,0,0,center)
+  &__photo
+    width: 60px
+    height: 60px
+    object-fit: contain
+    border-radius: 50%
+  &__name
+    margin-left: 16px
+    +t(0,500,18,#0B132A)
+  &__rate
+    margin-left: auto
+    +f(row-reverse,0,0,center)
+    +t(16,0,30,#0B132A)
+    +before(false)
+      margin-left: 8px
+  &__review
+    width: 100%
+    padding-top: 24px
+    +t(14,0,25,#0B132A)
+
+
+.brands
+  padding-bottom: 150px
+  +sm
+    padding-bottom: 48px
+  &__list
+    display: grid
+    grid-template-columns: repeat(4,22%)
+    grid-gap: 30px 47px
+    +md
+      grid-gap: 24px
+      justify-content: space-between
+    +sm
+      grid-template-columns: repeat(3,31%)
+    +xs
+      grid-template-columns: repeat(2,46%)
+
+.brand
+  height: 160px
+  background: #f6f6f7
+  border-radius: 10px
+  padding: 16px
+  +f()
+  +tr(all,.2s)
+  +xxs
+    height: 110px
+  +hover
+    box-shadow: 0 0 20px #c5c5c5
+  &.active
+    box-shadow: 0 0 20px #c5c5c5
+  img
+    margin: auto
+    +xxs
+      height: 100%
+      object-fit: contain
+
+
+.capture   
+  padding-bottom: 100px
+  +sm
+    padding-bottom: 48px
+  &__wrap
+    border: 2px solid #DDDDDD
+    border-radius: 10px
+    padding: 48px
+    +f(0,0,0,center)
+    +sm
+      padding: 24px
+    +xs
+      flex-wrap: wrap
+    .btn
+      margin: 0 56px 0 auto
+      +sm
+        margin: 0 0 0 auto
+      +xs
+        margin: 32px 0 0 0
+  &__content
+    max-width: 52%
+    +xs
+      max-width: 100%
+    .heading
+      margin-bottom: 16px
+      +xxs
+        +t(24,0,32,0)
+    p
+      +t(16,0,26,$c_grey)
+      +xxs
+        +t(14,0,24,0)

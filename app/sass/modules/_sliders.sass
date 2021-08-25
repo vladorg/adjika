@@ -1,0 +1,50 @@
+div.swiper-pagination
+  .bullet
+    width: 15px
+    height: 15px
+    border-radius: 50%
+    opacity: 1
+    background: radial-gradient(#D9DADC 4px, $transparent 5px)
+    margin: 0!important
+    +not_last
+      margin: 0 26px 0 0!important
+      +xs
+        margin: 0 16px 0 0!important
+    +hover
+      background: #D9DADC
+    +xs
+      +hover
+        background: radial-gradient(#D9DADC 4px, $transparent 5px)
+    &.swiper-pagination-bullet-active
+      background: $c_primary
+      +hover
+        background: $c_primary
+  
+  // &--static
+  //   position: static
+  //   margin-top: 16px
+
+
+
+.controls
+  +f()
+  .btn
+    width: 48px
+    height: 48px
+    border-radius: 4px
+    +f()
+    +before
+      display: block
+      margin: auto
+      width: 16px
+      height: 14px
+      background: url('../img/sprite.svg') -95px -5px
+    +hover
+      background: $c_controls_hover
+      +before
+        background: url('../img/sprite.svg') -95px -22px
+    &.swiper-next
+      margin-left: 8px
+      +before(false)
+        transform: rotate(180deg)
+    

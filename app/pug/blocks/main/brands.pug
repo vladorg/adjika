@@ -1,0 +1,20 @@
+-
+  let brands = [
+    './img/brands/1.png',
+    './img/brands/2.png',
+    './img/brands/3.png',
+    './img/brands/4.png',
+    './img/brands/5.png',
+    './img/brands/6.png',
+    './img/brands/7.png',
+    './img/brands/8.png'
+  ];
+
+section.section.brands
+  .container 
+    .heading(data-aos="fade-right") С нами 
+      span сотрудничают
+    .brands__list 
+      each brand in brands
+        .brand(data-aos="zoom-in" data-aos-delay="500")
+          img(src=brand alt="")

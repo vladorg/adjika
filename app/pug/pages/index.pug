@@ -1,0 +1,26 @@
+- var title = "Main Page";
+
+doctype html
+html(lang="en")
+  include ../blocks/head.pug
+  body.root
+
+    include ../blocks/header.pug
+
+    main.main
+      button.btn.scrolltop.ic-arrow_black
+      
+      include ../blocks/main/main.pug
+      include ../blocks/main/views.pug
+      include ../blocks/main/about.pug
+
+      include ../blocks/main/layer.pug
+
+      include ../blocks/main/portfolio.pug
+      include ../blocks/main/reviews.pug
+      include ../blocks/main/brands.pug
+      include ../blocks/main/capture.pug
+
+      
+
+    include ../blocks/footer.pug

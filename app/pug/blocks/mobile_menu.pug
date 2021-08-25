@@ -1,0 +1,20 @@
+.mobileMenu
+
+  .menu
+    ul
+      each link in header_menu
+        li
+          a(href="#" data-target=link.target class=link.active ? 'active' : null)=link.name
+
+  .phones
+    a(href="tel:380976542331") 097 654 23 31
+    a(href="tel:380636542331") 063 654 23 31
+
+  .socials
+    a(href="#" target="_blank").socials__link
+      img(src="./img/icons/twitter_black.svg" alt="")
+    a(href="#" target="_blank").socials__link
+      img(src="./img/icons/facebook_black.svg" alt="")
+    a(href="#" target="_blank").socials__link
+      img(src="./img/icons/google_black.svg" alt="")
+  

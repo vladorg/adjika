@@ -1,0 +1,57 @@
+// .container
+//   width: $container
+//   margin: 0 auto
+//   position: relative
+//   +md
+//     width: 92%
+
+.bg
+  position: relative
+  +after
+    width: 110px
+    height: 118px
+    position: absolute
+    top: 0
+    right: 0
+    background: url(../img/bg.svg) no-repeat
+    background-size: contain
+    +sm
+      width: 75px
+      height: 80px
+    +xs
+      display: none
+  
+  &--left-bottom
+    +after(false)
+      width: 131px
+      height: 142px
+      top: unset
+      right: unset
+      bottom: -35px
+      left: -35px
+      background: url(../img/bg2.svg)
+      +sm
+        display: none
+
+
+
+.section
+  &__title
+    padding-right: 120px
+    +xs
+      padding-right: 0
+    .controls
+      position: absolute
+      top: 0
+      right: 0
+      +xs
+        display: none
+
+
+.layer
+  background: linear-gradient(180deg, rgba(248, 248, 248, 0.8) -45.04%, rgba(248, 248, 248, 0) 88.56%)
+
+
+
+
+      

@@ -1,0 +1,27 @@
+.btn
+  display: inline-block
+  background: $transparent
+  border: none
+  padding: 0
+  font-size: 14px
+  max-width: 100%
+  +tr(all,.2s)
+  +hover
+    cursor: pointer
+
+  &--primary
+    text-transform: uppercase
+    letter-spacing: 0.01em
+    background: $c_primary
+    padding: 17px 36px
+    border-radius: 4px
+    white-space: nowrap
+    min-width: 264px
+    +t(14,600,22,#fff)
+    +xxs
+      width: 100%
+      min-width: 1px
+      padding: 17px
+    +hover
+      background: $c_primary_hover
+

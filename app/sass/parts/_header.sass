@@ -1,0 +1,57 @@
+.header
+  padding: 48px 0
+  background: #fff
+  position: relative
+  z-index: 101
+  +sm
+    padding: 16px 0
+    position: sticky
+    top: 0
+
+  &__wrap
+    +f(0,0,0,center)
+
+  .menu 
+    margin-left: auto
+    +sm
+      display: none
+    a
+      color: #000
+
+  .phones
+    margin-left: auto
+    +sm
+      display: none
+
+  .burger
+    +sm
+      display: block
+      margin-left: auto
+
+
+body.scrolled
+  padding-top: 144px
+  +sm
+    padding-top: 0
+  .header
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 10
+    padding: 16px 0
+    box-shadow: 0px 5px 20px #b1b1b1
+    animation: header_move .2s linear
+    +sm
+      position: sticky
+      animation: none
+      z-index: 101
+    
+
+
+// @keyframes header_move
+//   from
+//     transform: translateY(-100%)
+//   to
+//     transform: translateY(0)
+  

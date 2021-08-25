@@ -1,0 +1,33 @@
+-
+  let portfolio = [
+    './img/portfolio/1.jpg',
+    './img/portfolio/2.jpg',
+    './img/portfolio/3.jpg',
+    './img/portfolio/4.jpg',
+    './img/portfolio/5.jpg',
+    './img/portfolio/6.jpg',
+    './img/portfolio/1.jpg',
+    './img/portfolio/2.jpg',
+    './img/portfolio/3.jpg',
+    './img/portfolio/4.jpg',
+    './img/portfolio/5.jpg',
+    './img/portfolio/6.jpg',
+  ]
+
+section.section.portfolio(data-section="portfolio")  
+  .container 
+
+    .section__title 
+      .heading(data-aos="fade-right") Наше  
+        span портфолио
+      .controls(data-aos="fade-left") 
+        button.btn.swiper-prev
+        button.btn.swiper-next
+
+    .swiper-container 
+      .swiper-wrapper
+        each portfolio_item in portfolio
+          a(href=portfolio_item data-fancybox="gallery" class="swiper-slide" data-aos="zoom-in" data-aos-delay="500").portfolio__item
+            img(src=portfolio_item width="368" height="450" alt="")
+            .subtitle Lorem ipsum dolor
+      .swiper-pagination.swiper-pagination--static
