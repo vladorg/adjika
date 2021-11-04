@@ -20,7 +20,7 @@ This is a site-landing for lightboxes.
 
 ## Demo
 
-You can see live demo in [here](https://vladorg.github.io/art_moto/)
+You can see live demo in [here](https://vladorg.github.io/adjika/)
 
 ## Usage
 
