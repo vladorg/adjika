@@ -4,7 +4,7 @@ This is a site-landing for lightboxes.
 
 ## Features
 
-- HTML5
+- HTML5 (Pug)
 - SASS 
 - Javascript
 - Gulp
@@ -20,7 +20,7 @@ This is a site-landing for lightboxes.
 
 ## Demo
 
-You can see live demo in [here](https://vladorg.github.io/adjika/)
+You can see live demo in [here](https://vladorg.github.io/art_moto/)
 
 ## Usage
 
